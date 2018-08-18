@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:background="@drawable/weather_background"
+
+
+    >
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+
+        android:hint="@string/default_query"
+        android:background="@color/white"
+        android:textSize="30sp"
+        android:inputType="textAutoCorrect"
+        android:id="@+id/queryET"
+        android:textColor="@color/black"
+        android:imeOptions="actionGo"
+        android:gravity="center_vertical|center_horizontal"/>
+</RelativeLayout>
