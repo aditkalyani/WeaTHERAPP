@@ -8,25 +8,27 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
-    android:background="@drawable/weather_background"
+    android:background="@drawable/new_background"
 
 
     >
 
 
-
     <EditText
+        android:id="@+id/queryET"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-
-        android:hint="@string/default_query"
+        android:layout_marginTop="18dp"
         android:background="@color/white"
-        android:textSize="30sp"
-        android:inputType="textAutoCorrect"
-        android:id="@+id/queryET"
-        android:textColor="@color/black"
+        android:alpha="0.4"
+        android:textStyle="italic|bold"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="@string/default_query"
         android:imeOptions="actionGo"
-        android:gravity="center_vertical|center_horizontal"/>
+        android:inputType="textAutoCorrect"
+        android:shadowColor="@color/black"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
 </RelativeLayout>

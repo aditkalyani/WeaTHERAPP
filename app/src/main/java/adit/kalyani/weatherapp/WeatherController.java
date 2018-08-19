@@ -1,12 +1,15 @@
 package adit.kalyani.weatherapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Debug;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -27,15 +30,18 @@ public class WeatherController extends AppCompatActivity  {
     final String APP_ID = "842cbebbc0945b0666bfe4c2e409de5f";
     RecyclerView rv;
     ArrayList<Day> days;
+    TextView textView;
+    
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         String city = getIntent().getStringExtra("city");
+        textView = (TextView)findViewById(R.id.city_name);
         days = getWeatherForNewCity(city);
     }
 
-    public ArrayList<Day> getWeatherForNewCity(String city) {
+    public ArrayList<Day> getWeatherForNewCity(final String city) {
         RequestParams params = new RequestParams();
         params.put("q",city);
         params.put("appid",APP_ID);
@@ -45,6 +51,8 @@ public class WeatherController extends AppCompatActivity  {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
+                    textView.setText(city);
+
                     DateTime prevDay = new DateTime(0, 0, 0, 0, 0, 0);
                     int dayIndex = -1;
                     for (int i = 0; i < response.getJSONArray("list").length(); i++) {

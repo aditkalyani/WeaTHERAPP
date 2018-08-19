@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="100dp"
-    android:layout_margin="5dp">
+    android:layout_margin="5dp"
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/img_view"
@@ -20,7 +21,8 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_toEndOf="@+id/img_view" />
+        android:layout_toEndOf="@+id/img_view"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/time"
@@ -29,11 +31,13 @@
         android:layout_below="@+id/temperature"
         android:text="2:00"
         android:gravity="center"
-        android:layout_toEndOf="@+id/img_view" />
+        android:layout_toEndOf="@+id/img_view"
+        android:textColor="@color/white"/>
+
     <ImageView
         android:layout_width="2dp"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/time"
-        android:background="@color/black"/>
+        android:background="@color/white"/>
 
 </RelativeLayout>
